@@ -1,0 +1,13 @@
+version: '3'
+services:
+  dockereurekaserver:
+    image: wennaisong/dockereurekaserver
+    restart: always
+    ports:
+      - 8761:8761
+
+  dockereurakaregister:
+    image: wennaisong/dockereurakaregister
+    restart: always
+    ports:
+      - 8763:8763
