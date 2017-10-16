@@ -65,6 +65,7 @@
 				<version>0.4.3</version>
 				<configuration>
 					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+					<!--指定 Dockerfile 的位置-->
 					<dockerDirectory>src/main/docker</dockerDirectory>
 					<resources>
 						<resource>
