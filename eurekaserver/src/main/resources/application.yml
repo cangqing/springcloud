@@ -1,6 +1,13 @@
 server:
   port: 8761
 
+# 安全认证的配置
+security:
+  basic:
+    enabled: false
+  user:
+    name: chhliu  # 用户名
+    password: chhliu123456   # 用户密码
 
 #强制不注册到注册服务器
 #eureka.client.register-with-eureka=false
@@ -8,7 +15,7 @@ eureka:
   instance:
     hostname: localhost
   client:
-    registerWithEureka: false
+    registerWithEureka: false #因为这是一个单点的Eureka Server，不需要同步其他的Eureka Server节点的数据，故而设为false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/    #多个地址可使用 , 分隔

@@ -5,9 +5,12 @@ services:
     restart: always
     ports:
       - 8761:8761
+    container_name: dockereurekaserver
 
   dockereurakaregister:
     image: wennaisong/dockereurakaregister
     restart: always
     ports:
       - 8763:8763
+    links:
+      - dockereurekaserver
